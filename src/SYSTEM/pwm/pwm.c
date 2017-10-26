@@ -78,3 +78,31 @@ void TIM3_PWM_Init(u16 arr,u16 psc)
 	TIM_SetCompare4(TIM3,0);
 }
 
+void set_speed_left(s32 speed)
+{
+	if (speed>=0&&speed<=10000)
+	{
+		TIM_SetCompare1(TIM3,speed);
+		TIM_SetCompare2(TIM3,0);
+	}
+	else if (speed<0&&speed>=-10000)
+	{
+		TIM_SetCompare1(TIM3,0);
+		TIM_SetCompare2(TIM3,-speed);
+	}
+}
+
+void set_speed_right(s32 speed)
+{
+	if (speed>=0&&speed<=10000)
+	{
+		TIM_SetCompare3(TIM3,speed);
+		TIM_SetCompare4(TIM3,0);
+	}
+	else if (speed<0&&speed>=-10000)
+	{
+		TIM_SetCompare3(TIM3,0);
+		TIM_SetCompare4(TIM3,-speed);
+	}
+}
+

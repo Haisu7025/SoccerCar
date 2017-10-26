@@ -16,6 +16,8 @@
 //********************************************************************************
 
 void TIM3_PWM_Init(u16 arr,u16 psc);
+void set_speed_left(s32 speed);
+void set_speed_right(s32 speed);
 
 #endif
 
