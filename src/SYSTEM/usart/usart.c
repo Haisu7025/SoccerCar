@@ -126,6 +126,20 @@ void uart_init(u32 bound)
 	USART_Cmd(USART1, ENABLE);					   //使能串口1
 }
 
+void USART1_send_char(char output_c){
+	USART_SendData(USART1,output_c);
+	while(USART_GetFlagStatus(USART1,USART_FLAG_TC)!=SET);
+}
+
+void USART1_send_string(char output_s[],u16 len){
+	u8 i;
+	for(i=0;i<len;i++){
+		USART_SendData(USART1,output_s[i]);
+		while(USART_GetFlagStatus(USART1,USART_FLAG_TC)!=SET);
+	}
+	USART_SendData(USART1,'\n');
+}
+
 void USART1_IRQHandler(void) //串口1中断服务程序
 {
 	u8 Res;

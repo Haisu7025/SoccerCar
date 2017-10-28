@@ -81,13 +81,11 @@ void TIM3_IRQHandler(void) //TIM3中断
 
 		//speed-1:
 		speed1 = (int)((s16)(TIM2->CNT));
-		printf("speed1:%d", speed1);
-		TIM2_Encoder_Write(0);
-
 		//speed-2:
 		speed2 = (int)((s16)(TIM4->CNT));
-		printf("speed2:%d", speed2);
-		TIM4_Encoder_Write(0);
+		
+		//TIM2_Encoder_Write(0);
+		//TIM4_Encoder_Write(0);
 	}
 }
 

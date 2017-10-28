@@ -3,7 +3,7 @@
 ..\obj\state.o: ..\SYSTEM\sys\sys.h
 ..\obj\state.o: ..\USER\stm32f10x.h
 ..\obj\state.o: ..\CORE\core_cm3.h
-..\obj\state.o: C:\developer\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\state.o: E:\mdk514\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\state.o: ..\USER\system_stm32f10x.h
 ..\obj\state.o: ..\USER\stm32f10x_conf.h
 ..\obj\state.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h
