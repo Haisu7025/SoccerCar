@@ -14,7 +14,7 @@
 //All rights reserved
 //////////////////////////////////////////////////////////////////////////////////
 
-void TIM3_Int_Init(u16 arr, u16 psc);
+void TIM6_Int_Init(u16 arr, u16 psc);
 void TIM5_Int_Init(u16 arr, u16 psc);
 void TIM2_Encoder_Init(u16 arr, u16 psc);
 void TIM2_Encoder_Write(u16 data);
