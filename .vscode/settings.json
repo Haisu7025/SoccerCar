@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "*.p4": "cpp",
+        "*.v": "verilog",
+        "*.bsv": "c",
+        "pwm.h": "c",
+        "sys.h": "c"
+    }
+}

@@ -78,19 +78,22 @@ void TIM6_IRQHandler(void) //TIM6中断
 	{
 		TIM_ClearITPendingBit(TIM6, TIM_IT_Update); //清除TIMx更新中断标志
 		//TODO:TIM6 interruption
-	
+
 		//speed-1:
 		*speed1 = (u16)((s16)(TIM2->CNT));
 		//speed-2:
 		*speed2 = (u16)((s16)(TIM4->CNT));
 		TIM2_Encoder_Write(0);
+		TIM4_Encoder_Write(0);
 
+		adj_spd(NULL, &surface_speed1, speed1, target_speed1, 0);
+		adj_spd(NULL, &surface_speed2, speed2, target_speed2, 1);
 	}
 }
 
 void TIM5_IRQHandler(void)
 {
-	u16 len=0,t=0;
+	u16 len = 0, t = 0;
 	if (TIM_GetITStatus(TIM5, TIM_IT_Update) != RESET) //检查TIM6更新中断发生与否
 	{
 		TIM_ClearITPendingBit(TIM5, TIM_IT_Update); //清除TIMx更新中断标志

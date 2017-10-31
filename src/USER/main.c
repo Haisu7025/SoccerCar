@@ -8,42 +8,48 @@
 
 /************************************************
 ************************************************/
-u16 speed_1,speed_2;
+u16 speed_1, speed_2;
+void init_paras()
+{
+	speed_1 = 0;
+	speed_2 = 0;
+	target_speed1 = target_speed2 = 0;
+	surface_speed1 = surface_speed2 = 0;
+
+	adj_pace = 500;
+}
 int system_init()
 {
-	speed_1=10;
-	speed_2=10;
+	init_paras();
 	speed1 = &speed_1;
 	speed2 = &speed_2;
 	TIM6_Int_Init(999, 7199);  //count speed every 100ms
 	TIM5_Int_Init(9999, 7199); //receive usart every 500ms
 	TIM2_Encoder_Init(0xffff, 0);
 	TIM4_Encoder_Init(0xffff, 0);
-	
+
 	delay_init();
 }
 
-
 int TIM2_Encoder_Read(void)
 {
-    TIM2_Encoder_Write(0);	//¼ÆÊıÆ÷Çå0
-	  delay_ms(1700);	  //¼ì²âÊ±¼ä£¬¿Éµ÷½Ú
-    return (int)((s16)(TIM2->CNT));	   //Êı¾İÀàĞÍ×ª»»
-	                     //¼ÇÂ¼±ßÑØ±ä»¯´ÎÊı£¨¼¸¸öÕ¤¸ñ±»¼ÇÂ¼4´Î£©
+	TIM2_Encoder_Write(0);			//è®¡æ•°å™¨æ¸…0
+	delay_ms(1700);					//æ£€æµ‹æ—¶é—´ï¼Œå¯è°ƒèŠ‚
+	return (int)((s16)(TIM2->CNT)); //æ•°æ®ç±»å‹è½¬æ¢
+									//è®°å½•è¾¹æ²¿å˜åŒ–æ¬¡æ•°ï¼ˆå‡ ä¸ªæ …æ ¼è¢«è®°å½•4æ¬¡ï¼‰
 }
-
 
 int main(void)
 {
 	system_init();
 	TIM3_PWM_Init(10000, 0);
-	uart_init(115200);	 //´®¿Ú³õÊ¼»¯Îª115200
-	
+	uart_init(115200); //ä¸²å£åˆå§‹åŒ–ä¸º115200
+
 	set_speed_left(4000);
 	set_speed_right(4000);
-	while(1)
-    {
-			printf("speed1:%d=====speed2:%d\n",*speed1,*speed2);
-			delay_ms(888);
-    }		
+	while (1)
+	{
+		printf("speed1:%d=====speed2:%d\n", *speed1, *speed2);
+		delay_ms(888);
+	}
 }
