@@ -86,8 +86,8 @@ void TIM6_IRQHandler(void) //TIM6中断
 		TIM2_Encoder_Write(0);
 		TIM4_Encoder_Write(0);
 
-		adj_spd(NULL, &surface_speed1, speed1, target_speed1, 0);
-		adj_spd(NULL, &surface_speed2, speed2, target_speed2, 1);
+		adj_spd(NULL, &surface_speed1, *speed1, target_speed1, 0);
+		adj_spd(NULL, &surface_speed2, *speed2, target_speed2, 1);
 	}
 }
 
