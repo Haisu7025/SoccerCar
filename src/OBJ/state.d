@@ -30,3 +30,4 @@
 ..\obj\state.o: ..\STM32F10x_FWLib\inc\stm32f10x_usart.h
 ..\obj\state.o: ..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h
 ..\obj\state.o: ..\STM32F10x_FWLib\inc\misc.h
+..\obj\state.o: ..\SYSTEM\pwm\pwm.h

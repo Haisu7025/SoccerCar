@@ -44,7 +44,10 @@ int main(void)
 	system_init();
 	TIM3_PWM_Init(10000, 0);
 	uart_init(115200); //串口初始化为115200
-
+	
+	surface_speed1=4000;
+	target_speed1=1500;
+	surface_speed2=4000;
 	set_speed_left(4000);
 	set_speed_right(4000);
 	while (1)
