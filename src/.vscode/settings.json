@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "*.p4": "cpp",
-        "*.v": "verilog",
-        "*.bsv": "c",
-        "i2c_mpu6050.h": "c",
-        "stm32f10x.h": "c"
-    }
-}

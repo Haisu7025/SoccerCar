@@ -33,5 +33,3 @@
 ..\obj\timer.o: ..\SYSTEM\usart\usart.h
 ..\obj\timer.o: C:\developer\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\timer.o: ..\USER\state\state.h
-..\obj\timer.o: ..\SYSTEM\UltraSonic\ultrasonic.h
-..\obj\timer.o: ..\SYSTEM\MPU\I2C_MPU6050.h

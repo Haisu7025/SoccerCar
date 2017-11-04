@@ -5,10 +5,7 @@
 
 extern s16 *speed1;
 extern s16 *speed2;
-extern float distance;
 extern s16 adj_pace;
-extern s16 ZW;
-extern s16 ZA;
 extern s16 target_speed1, target_speed2;
 extern s16 surface_speed1, surface_speed2;
 extern unsigned char usart_msg[100];
