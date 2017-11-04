@@ -1,6 +1,8 @@
 #include "timer.h"
 #include "usart.h"
 #include "state.h"
+#include "com.h"
+#include "traceBall.h"
 //////////////////////////////////////////////////////////////////////////////////
 //本程序只供学习使用，未经作者许可，不得用于其它任何用途
 //ALIENTEK战舰STM32开发板
@@ -107,6 +109,10 @@ void TIM5_IRQHandler(void)
 				usart_msg[t] = USART_RX_BUF[t]; //向串口1发送数据
 			}
 			USART_RX_STA = 0;
+			vbx = ball_x(usart_msg) - xb; vby = ball_y(usart_msg) - yb;
+			vcx = self_x(usart_msg) - xc; vcy = self_y(usart_msg) - yc;
+			xb = ball_x(usart_msg); yb = ball_y(usart_msg);
+			xc = self_x(usart_msg); yc = self_y(usart_msg);
 		}
 	}
 }

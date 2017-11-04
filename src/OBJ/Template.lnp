@@ -9,6 +9,8 @@
 "..\obj\pwm.o"
 "..\obj\timer.o"
 "..\obj\kicker.o"
+"..\obj\com.o"
+"..\obj\traceball.o"
 "..\obj\core_cm3.o"
 "..\obj\startup_stm32f10x_hd.o"
 "..\obj\misc.o"

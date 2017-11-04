@@ -6,6 +6,7 @@
 #include "state.h"
 #include "timer.h"
 #include "kicker.h"
+#include "traceBall.h"
 
 /************************************************
 ************************************************/
@@ -15,7 +16,9 @@ void init_paras()
 	speed_1 = 0;
 	speed_2 = 0;
 	target_speed1 = target_speed2 = 0;
-	surface_speed1 = surface_speed2 = 0;
+	surface_speed1 = surface_speed2 = 0;	
+	
+	A = K_p*(1+T/T_I+T_D/T); B = -K_p*(1+2*T_D/T); C = K_p*T_D/T;
 
 	adj_pace = 500;
 }
@@ -29,7 +32,7 @@ int system_init()
 	TIM2_Encoder_Init(0xffff, 0);
 	TIM4_Encoder_Init(0xffff, 0);
 	TIM6_Int_Init(999, 7199);  //count speed every 100ms
-	TIM5_Int_Init(9999, 7199); //receive usart every 500ms
+	TIM5_Int_Init(4999, 7199); //receive usart every 500ms
 }
 
 int TIM2_Encoder_Read(void)
@@ -46,11 +49,15 @@ int main(void)
 	TIM3_PWM_Init(10000, 0);
 	uart_init(115200); //串口初始化为115200
 	surface_speed1 = surface_speed2 = 2000;
-	target_speed1 = target_speed2 = 600;
+	target_speed1 = target_speed2 = 400;
 	KICK_Init();
 	while (1)
 	{
+		//traceBall();
 		printf("speed1:%d=====speed2:%d\n", *speed1, *speed2);
+		if(usart_msg[9]==99 && usart_msg[11]==99){
+				target_speed1=target_speed2=0;
+		}
 		delay_ms(888);
 		KICK();
 	}

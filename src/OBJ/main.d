@@ -36,3 +36,4 @@
 ..\obj\main.o: ..\USER\state\state.h
 ..\obj\main.o: ..\SYSTEM\timer\timer.h
 ..\obj\main.o: ..\SYSTEM\kicker\kicker.h
+..\obj\main.o: ..\SYSTEM\traceBall\traceBall.h

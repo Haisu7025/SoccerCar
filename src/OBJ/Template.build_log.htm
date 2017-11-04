@@ -21,22 +21,28 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V2.0.14.0_KEIL
 Dialog DLL:      TCM.DLL V1.14.4.0
  
 <h2>Project:</h2>
-C:\developer\src\src\USER\Template.uvprojx
+C:\developer\SoccerCar\src\USER\Template.uvprojx
 Project File Date:  11/04/2017
 
 <h2>Output:</h2>
 Build target 'Template'
-compiling timer.c...
-..\USER\state\state.h(14): warning:  #1-D: last line of file ends without a newline
+compiling main.c...
+..\USER\state\state.h(21): warning:  #1-D: last line of file ends without a newline
   #endif
-..\SYSTEM\TIMER\timer.c: 1 warning, 0 errors
+..\SYSTEM\traceBall\traceBall.h(4): warning:  #1295-D: Deprecated declaration traceBall - give arg types
+  void traceBall();
+..\SYSTEM\traceBall\traceBall.h(6): warning:  #1-D: last line of file ends without a newline
+  #endif
+main.c(36): warning:  #940-D: missing return statement at end of non-void function "system_init"
+  }
+main.c: 4 warnings, 0 errors
 linking...
-Program Size: Code=5888 RO-data=336 RW-data=76 ZI-data=1932  
+Program Size: Code=7516 RO-data=336 RW-data=128 ZI-data=1936  
 FromELF: creating hex file...
-"..\OBJ\Template.axf" - 0 Error(s), 1 Warning(s).
+"..\OBJ\Template.axf" - 0 Error(s), 4 Warning(s).
 
 <h2>Collection of Component include folders:</h2>
-  C:\developer\src\src\USER\RTE
+  C:\developer\SoccerCar\src\USER\RTE
   C:\developer\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0
 
 <h2>Collection of Component Files used:</h2>
