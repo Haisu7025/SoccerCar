@@ -1,16 +1,19 @@
 #include "state.h"
 #include "pwm.h"
 
-u16 *speed1;
-u16 *speed2;
-u16 adj_pace;
-u16 target_speed1, target_speed2;
-u16 surface_speed1, surface_speed2;
+s16 *speed1;
+s16 *speed2;
+s16 distance;
+s16 adj_pace;
+s16 ZW;
+s16 ZA;
+s16 target_speed1, target_speed2;
+s16 surface_speed1, surface_speed2;
 unsigned char usart_msg[100];
 
-void adj_spd(u16 *adj_pace, u16 *surface_speed, u16 speed, u16 target_speed, char lr)
+void adj_spd(s16 *adj_pace, s16 *surface_speed, s16 speed, s16 target_speed, char lr)
 {
-    u16 pace;
+    s16 pace;
     if (speed > target_speed)
     {
         pace = (speed - target_speed) * 67 / 100;

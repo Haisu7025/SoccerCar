@@ -3,12 +3,15 @@
 
 #include "sys.h"
 
-extern u16 *speed1;
-extern u16 *speed2;
-extern u16 adj_pace;
-extern u16 target_speed1, target_speed2;
-extern u16 surface_speed1, surface_speed2;
+extern s16 *speed1;
+extern s16 *speed2;
+extern s16 distance;
+extern s16 adj_pace;
+extern s16 ZW;
+extern s16 ZA;
+extern s16 target_speed1, target_speed2;
+extern s16 surface_speed1, surface_speed2;
 extern unsigned char usart_msg[100];
 
-void adj_spd(u16 *adj_pace, u16 *surface_speed, u16 speed, u16 target_speed, char lr);
+void adj_spd(s16 *adj_pace, s16 *surface_speed, s16 speed, s16 target_speed, char lr);
 #endif
