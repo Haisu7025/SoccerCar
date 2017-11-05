@@ -14,6 +14,8 @@ float error0 = 0, error1 = 0, error2 = 0;
 char xb = 0, xc = 0, vbx = 0, vcx = 0;
 u16 yb = 0, yc = 0, vby = 0, vcy = 0;
 
+float yaw, theta0;
+
 void adj_spd(s16 *adj_pace, s16 *surface_speed, s16 speed, s16 target_speed, char lr)
 {
     s16 pace;

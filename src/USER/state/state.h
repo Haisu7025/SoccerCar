@@ -17,5 +17,7 @@ extern float error0, error1, error2;
 extern char xb, xc, vbx, vcx;
 extern u16 yb, yc, vby, vcy;
 
+extern float yaw, theta0;
+
 void adj_spd(s16 *adj_pace, s16 *surface_speed, s16 speed, s16 target_speed, char lr);
 #endif

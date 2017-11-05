@@ -27,13 +27,40 @@ void KICK_Init()
  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; 		 //推挽输出
  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;		 //IO口速度为50MHz
  GPIO_Init(GPIOB, &GPIO_InitStructure);					 //根据设定参数初始化GPIOB.12
- GPIO_ResetBits(GPIOB,GPIO_Pin_12);						 //PB.12 输出高
+ GPIO_ResetBits(GPIOB,GPIO_Pin_12);						 //PB.12 输出低
+	
+	
+ GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10;				 //LED0-->PB.10 端口配置
+ GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; 		 //推挽输出
+ GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;		 //IO口速度为50MHz
+ GPIO_Init(GPIOB, &GPIO_InitStructure);					 //根据设定参数初始化GPIOB.10
+ GPIO_ResetBits(GPIOB,GPIO_Pin_10);						 //PB.10 输出低
+
+ GPIO_InitStructure.GPIO_Pin = GPIO_Pin_11;				 //LED0-->PB.11 端口配置
+ GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPD; 		 //下拉输出
+ GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;		 //IO口速度为50MHz
+ GPIO_Init(GPIOB, &GPIO_InitStructure);					 //根据设定参数初始化GPIOB.11
+
 }
  
 
 void KICK()
 {
 	GPIO_SetBits(GPIOB,GPIO_Pin_12);	
-  delay_ms(300);
+  delay_ms(200);
 	GPIO_ResetBits(GPIOB,GPIO_Pin_12);	
+}
+
+s16 DISTANCE_mm()
+{
+	u16 i=0;
+	GPIO_SetBits(GPIOB,GPIO_Pin_10);
+	delay_us(10);
+	GPIO_ResetBits(GPIOB,GPIO_Pin_10);
+	while(GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_11)==0);
+	while ((i<10000)&&(GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_11))) 
+	{
+		i++;
+	}
+	return (i);
 }

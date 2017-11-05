@@ -16,5 +16,6 @@
 
 void KICK(void);
 void KICK_Init(void);//≥ı ºªØ
+s16 DISTANCE_mm(void);
 
 #endif

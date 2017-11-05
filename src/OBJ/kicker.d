@@ -3,7 +3,7 @@
 ..\obj\kicker.o: ..\SYSTEM\sys\sys.h
 ..\obj\kicker.o: ..\USER\stm32f10x.h
 ..\obj\kicker.o: ..\CORE\core_cm3.h
-..\obj\kicker.o: C:\developer\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\kicker.o: E:\mdk514\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\kicker.o: ..\USER\system_stm32f10x.h
 ..\obj\kicker.o: ..\USER\stm32f10x_conf.h
 ..\obj\kicker.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h

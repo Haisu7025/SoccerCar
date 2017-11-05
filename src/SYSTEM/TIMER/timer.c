@@ -141,7 +141,7 @@ void TIM4_Encoder_Init(u16 arr, u16 psc)
 	RCC->APB2ENR |= 1 << 2; //使能PORTA时钟
 
 	// GPIOA->CRL &= 0XFFFFFF00; //PA0、PA1 清除之前设置
-	GPIOB->CRL |= 0X44000000; //PA0、PA1 浮空输入
+	GPIOB->CRL |= 0X44000000; //PA0、PA1 浮空输入 
 
 	TIM4->ARR = arr; //设定计数器自动重装值
 	TIM4->PSC = psc; //预分频器

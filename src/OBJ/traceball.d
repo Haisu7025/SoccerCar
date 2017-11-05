@@ -4,7 +4,7 @@
 ..\obj\traceball.o: ..\SYSTEM\sys\sys.h
 ..\obj\traceball.o: ..\USER\stm32f10x.h
 ..\obj\traceball.o: ..\CORE\core_cm3.h
-..\obj\traceball.o: C:\developer\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\traceball.o: E:\mdk514\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\traceball.o: ..\USER\system_stm32f10x.h
 ..\obj\traceball.o: ..\USER\stm32f10x_conf.h
 ..\obj\traceball.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h
@@ -31,5 +31,8 @@
 ..\obj\traceball.o: ..\STM32F10x_FWLib\inc\stm32f10x_usart.h
 ..\obj\traceball.o: ..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h
 ..\obj\traceball.o: ..\STM32F10x_FWLib\inc\misc.h
-..\obj\traceball.o: C:\developer\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+..\obj\traceball.o: E:\mdk514\ARM\ARMCC\Bin\..\include\math.h
 ..\obj\traceball.o: ..\SYSTEM\pwm\pwm.h
+..\obj\traceball.o: ..\SYSTEM\com\com.h
+..\obj\traceball.o: ..\SYSTEM\usart\usart.h
+..\obj\traceball.o: E:\mdk514\ARM\ARMCC\Bin\..\include\stdio.h
